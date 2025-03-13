@@ -6,11 +6,11 @@ class Ship:
         """Initialize the ship and set its starting position."""
         self.screen = screen
 
-        # Construct the correct path to the image
-        image_path = os.path.join('images', 'ship.bmp')
+        # # Construct the correct path to the image
+        # image_path = os.path.join('images', 'ship.bmp')
 
         # Load the ship image and get its rect
-        self.image = pygame.image.load(image_path)
+        self.image = pygame.image.load("C:\\Users\\Administrator\\Desktop\\projects\\Alien_Invasion\\Alien_Invasion_game\\images\\ship.bmp")
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
 
