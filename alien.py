@@ -11,7 +11,7 @@ class Alien(Sprite):
         self.ai_settings = ai_settings
 
         # load the alien image and set its rect attribute
-        image_path = os.path.join(os.path.dirname(__file__), "images", "alien.bmp")
+        image_path = os.path.join(os.path.dirname(__file__), "images", "alien1.bmp")
         print(f"Loading alien image from: {image_path}")  # Debugging line
         try:
             self.image = pygame.image.load(image_path)
