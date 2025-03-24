@@ -18,11 +18,14 @@ class Alien(Sprite):
         except pygame.error:
             raise FileNotFoundError(f"Alien image not found at {image_path}. Please check the file path")
         
+        # resize the alien image to 100*50 
+        self.image = pygame.transform.scale(self.image, (100,100))
+        
         self.rect = self.image.get_rect()
 
         # start each new alien near the top left of the screen
-        self.rect.x = self.rect.width 
-        self.rect.y = self.rect.height
+        self.rect.x = 0 
+        self.rect.y = 0
 
         # store the alien's exact position
         self.x = float(self.rect.x)
