@@ -38,7 +38,7 @@ def check_keyup_events(event, ship):
     elif event.key == pygame.K_DOWN:
         ship.moving_down = False
 
-def check_events(ai_settings, screen, ship, bullets):
+def check_events(ai_settings, screen, ship, bullets, play_button, stats, aliens):
     """respond to keypresses and mouse events"""
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -50,7 +50,7 @@ def check_events(ai_settings, screen, ship, bullets):
         elif event.type == pygame.KEYUP:
            check_keyup_events(event, ship)
 
-def update_screen(ai_settings, screen, ship, aliens, bullets):
+def update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button):
     """update images on the screen and flip to the new screen"""
     # redraw the screen during each pass through the loop
     screen.fill(ai_settings.bg_color)
@@ -60,6 +60,10 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
         
     ship.blitme()
     aliens.draw(screen)
+
+    # draw the play button if the game is inactive
+    if not stats.game_active:
+        play_button.draw_button()
 
     # make the most recently drawn screen visible 
     pygame.display.flip()
